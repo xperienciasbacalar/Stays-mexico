@@ -153,13 +153,13 @@ function Navbar() {
         
         {/* Desktop Nav */}
         <div className={`hidden md:flex space-x-8 text-sm font-medium tracking-wide uppercase ${isScrolled ? 'text-gray-600' : 'text-white/90'}`}>
-          <a href="#habitaciones" className="hover:text-amber-600 transition-colors">Habitaciones</a>
-          <a href="#experiencias" className="hover:text-amber-600 transition-colors">Tours</a>
-          <a href="#room-service" className="hover:text-amber-600 transition-colors">Room Service</a>
-          <a href="#contacto" className="hover:text-amber-600 transition-colors">Contacto</a>
+          <a href="#habitaciones" className="hover:text-bacalar-600 transition-colors">Habitaciones</a>
+          <a href="#experiencias" className="hover:text-bacalar-600 transition-colors">Tours</a>
+          <a href="#room-service" className="hover:text-bacalar-600 transition-colors">Room Service</a>
+          <a href="#contacto" className="hover:text-bacalar-600 transition-colors">Contacto</a>
         </div>
 
-        <button className={`hidden md:block px-6 py-2 border ${isScrolled ? 'border-ocean-900 text-ocean-900 hover:bg-ocean-900 hover:text-white' : 'border-white text-white hover:bg-white hover:text-ocean-900'} transition-colors text-sm font-medium uppercase tracking-wider`}>
+        <button className={`hidden md:block px-6 py-2 border rounded-full ${isScrolled ? 'border-ocean-900 text-ocean-900 hover:bg-ocean-900 hover:text-white' : 'border-white text-white hover:bg-white hover:text-ocean-900'} transition-all duration-300 text-sm font-medium uppercase tracking-wider`}>
           Reservar
         </button>
 
@@ -226,7 +226,7 @@ function Hero({ selectedDestination, setSelectedDestination }: { selectedDestina
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-amber-400 font-medium tracking-[0.15em] md:tracking-[0.2em] uppercase text-xs md:text-sm mb-4 leading-relaxed"
+          className="text-bacalar-300 font-medium tracking-[0.15em] md:tracking-[0.2em] uppercase text-xs md:text-sm mb-4 leading-relaxed"
         >
           Bacalar • Xul-Ha • Rosarito • Cd. Juárez
         </motion.p>
@@ -234,7 +234,7 @@ function Hero({ selectedDestination, setSelectedDestination }: { selectedDestina
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-6 leading-tight"
+          className="text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-6 leading-tight drop-shadow-lg"
         >
           Tu escape <br className="hidden md:block" /><span className="italic font-light">perfecto</span>
         </motion.h1>
@@ -242,9 +242,9 @@ function Hero({ selectedDestination, setSelectedDestination }: { selectedDestina
 
       {/* Booking Bar */}
       <div className="relative md:absolute md:-bottom-16 left-0 w-full px-4 z-20 pb-8 md:pb-0">
-        <div className="max-w-6xl mx-auto bg-white shadow-2xl rounded-2xl md:rounded-sm p-4 flex flex-col md:flex-row gap-4">
+        <div className="max-w-6xl mx-auto bg-white shadow-2xl rounded-3xl md:rounded-full p-4 flex flex-col md:flex-row gap-4">
           <div className="flex-1 flex items-center border-b md:border-b-0 md:border-r border-gray-200 px-4 py-3">
-            <MapPin className="w-5 h-5 text-amber-600 mr-3 shrink-0" />
+            <MapPin className="w-5 h-5 text-bacalar-600 mr-3 shrink-0" />
             <div className="flex flex-col w-full">
               <span className="text-xs text-gray-400 uppercase font-semibold tracking-wider">Destino</span>
               <select 
@@ -261,21 +261,21 @@ function Hero({ selectedDestination, setSelectedDestination }: { selectedDestina
             </div>
           </div>
           <div className="flex-1 flex items-center border-b md:border-b-0 md:border-r border-gray-200 px-4 py-3">
-            <Calendar className="w-5 h-5 text-amber-600 mr-3 shrink-0" />
+            <Calendar className="w-5 h-5 text-bacalar-600 mr-3 shrink-0" />
             <div className="flex flex-col">
               <span className="text-xs text-gray-400 uppercase font-semibold tracking-wider">Llegada</span>
               <input type="date" className="text-sm font-medium text-gray-800 outline-none bg-transparent" />
             </div>
           </div>
           <div className="flex-1 flex items-center border-b md:border-b-0 md:border-r border-gray-200 px-4 py-3">
-            <Calendar className="w-5 h-5 text-amber-600 mr-3 shrink-0" />
+            <Calendar className="w-5 h-5 text-bacalar-600 mr-3 shrink-0" />
             <div className="flex flex-col">
               <span className="text-xs text-gray-400 uppercase font-semibold tracking-wider">Salida</span>
               <input type="date" className="text-sm font-medium text-gray-800 outline-none bg-transparent" />
             </div>
           </div>
           <div className="flex-1 flex items-center px-4 py-3">
-            <Users className="w-5 h-5 text-amber-600 mr-3 shrink-0" />
+            <Users className="w-5 h-5 text-bacalar-600 mr-3 shrink-0" />
             <div className="flex flex-col w-full">
               <span className="text-xs text-gray-400 uppercase font-semibold tracking-wider">Huéspedes</span>
               <select className="text-sm font-medium text-gray-800 outline-none bg-transparent w-full cursor-pointer">
@@ -289,7 +289,7 @@ function Hero({ selectedDestination, setSelectedDestination }: { selectedDestina
           <button 
             onClick={handleSearch}
             disabled={isSearching}
-            className="bg-ocean-900 hover:bg-ocean-800 text-white px-8 py-4 md:py-0 flex items-center justify-center transition-colors uppercase text-sm font-semibold tracking-wider disabled:opacity-80 rounded-lg md:rounded-none mt-2 md:mt-0"
+            className="bg-bacalar-600 hover:bg-bacalar-500 text-white px-8 py-4 md:py-0 flex items-center justify-center transition-all duration-300 uppercase text-sm font-semibold tracking-wider disabled:opacity-80 rounded-2xl md:rounded-full mt-2 md:mt-0"
           >
             {isSearching ? (
               <span className="animate-pulse">Buscando...</span>
@@ -312,7 +312,7 @@ function DestinationGuideSection() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-serif text-ocean-900 mb-4">¿Bacalar o Xul-Ha?</h2>
-          <div className="w-16 h-px bg-amber-600 mx-auto mb-6"></div>
+          <div className="w-16 h-px bg-bacalar-600 mx-auto mb-6"></div>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             Dos paraísos en el sur de Quintana Roo con personalidades únicas. Descubre cuál es el escenario perfecto para tu próxima escapada.
           </p>
@@ -338,19 +338,19 @@ function DestinationGuideSection() {
             <div className="p-8 flex-1 flex flex-col">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-3xl font-serif text-ocean-900">Bacalar</h3>
-                <Sun className="text-amber-500 w-8 h-8" />
+                <Sun className="text-bacalar-500 w-8 h-8" />
               </div>
               <p className="text-gray-600 mb-8 flex-1 leading-relaxed">
                 El famoso Pueblo Mágico. Ofrece una mezcla perfecta de belleza natural, excelente gastronomía, clubes de playa y paseos en velero por la Laguna de los 7 Colores.
               </p>
-              <div className="bg-sand-50 p-6 rounded-xl border border-sand-100">
+              <div className="bg-sand-50 p-6 rounded-2xl border border-sand-100">
                 <h4 className="text-xs font-bold uppercase tracking-widest text-ocean-900 mb-4 flex items-center">
-                  <Star className="w-4 h-4 mr-2 text-amber-500" /> Ideal para:
+                  <Star className="w-4 h-4 mr-2 text-bacalar-500" /> Ideal para:
                 </h4>
                 <ul className="text-sm text-gray-600 space-y-3">
-                  <li className="flex items-start"><ChevronRight className="w-4 h-4 text-amber-600 mr-2 shrink-0 mt-0.5" /> <span>Viajeros que buscan restaurantes y ambiente relajado pero social.</span></li>
-                  <li className="flex items-start"><ChevronRight className="w-4 h-4 text-amber-600 mr-2 shrink-0 mt-0.5" /> <span>Familias y grupos de amigos.</span></li>
-                  <li className="flex items-start"><ChevronRight className="w-4 h-4 text-amber-600 mr-2 shrink-0 mt-0.5" /> <span>Amantes de los deportes acuáticos (paddleboard, velero).</span></li>
+                  <li className="flex items-start"><ChevronRight className="w-4 h-4 text-bacalar-600 mr-2 shrink-0 mt-0.5" /> <span>Viajeros que buscan restaurantes y ambiente relajado pero social.</span></li>
+                  <li className="flex items-start"><ChevronRight className="w-4 h-4 text-bacalar-600 mr-2 shrink-0 mt-0.5" /> <span>Familias y grupos de amigos.</span></li>
+                  <li className="flex items-start"><ChevronRight className="w-4 h-4 text-bacalar-600 mr-2 shrink-0 mt-0.5" /> <span>Amantes de los deportes acuáticos (paddleboard, velero).</span></li>
                 </ul>
               </div>
             </div>
@@ -380,14 +380,14 @@ function DestinationGuideSection() {
               <p className="text-gray-600 mb-8 flex-1 leading-relaxed">
                 El refugio secreto al final del agua. Un santuario de paz rodeado de selva exuberante, donde la laguna se encuentra con los rápidos y cenotes vírgenes. Desconexión total.
               </p>
-              <div className="bg-sand-50 p-6 rounded-xl border border-sand-100">
+              <div className="bg-sand-50 p-6 rounded-2xl border border-sand-100">
                 <h4 className="text-xs font-bold uppercase tracking-widest text-ocean-900 mb-4 flex items-center">
-                  <Star className="w-4 h-4 mr-2 text-amber-500" /> Ideal para:
+                  <Star className="w-4 h-4 mr-2 text-bacalar-500" /> Ideal para:
                 </h4>
                 <ul className="text-sm text-gray-600 space-y-3">
-                  <li className="flex items-start"><ChevronRight className="w-4 h-4 text-amber-600 mr-2 shrink-0 mt-0.5" /> <span>Parejas en busca de privacidad, romance y tranquilidad.</span></li>
-                  <li className="flex items-start"><ChevronRight className="w-4 h-4 text-amber-600 mr-2 shrink-0 mt-0.5" /> <span>Retiros de bienestar, lectura y meditación.</span></li>
-                  <li className="flex items-start"><ChevronRight className="w-4 h-4 text-amber-600 mr-2 shrink-0 mt-0.5" /> <span>Ecoturismo y conexión profunda con la naturaleza.</span></li>
+                  <li className="flex items-start"><ChevronRight className="w-4 h-4 text-bacalar-600 mr-2 shrink-0 mt-0.5" /> <span>Parejas en busca de privacidad, romance y tranquilidad.</span></li>
+                  <li className="flex items-start"><ChevronRight className="w-4 h-4 text-bacalar-600 mr-2 shrink-0 mt-0.5" /> <span>Retiros de bienestar, lectura y meditación.</span></li>
+                  <li className="flex items-start"><ChevronRight className="w-4 h-4 text-bacalar-600 mr-2 shrink-0 mt-0.5" /> <span>Ecoturismo y conexión profunda con la naturaleza.</span></li>
                 </ul>
               </div>
             </div>
@@ -407,7 +407,7 @@ function RoomsSection({ selectedDestination }: { selectedDestination: string }) 
     <section id="habitaciones" className="py-32 px-6 md:px-12 max-w-7xl mx-auto">
       <div className="text-center mb-16">
         <h2 className="text-4xl md:text-5xl font-serif text-ocean-900 mb-4">Nuestras Habitaciones</h2>
-        <div className="w-16 h-px bg-amber-600 mx-auto mb-6"></div>
+        <div className="w-16 h-px bg-bacalar-600 mx-auto mb-6"></div>
         <p className="text-gray-600 max-w-2xl mx-auto">
           {selectedDestination !== 'Todos' 
             ? `Mostrando opciones disponibles en ${selectedDestination}.` 
@@ -421,19 +421,19 @@ function RoomsSection({ selectedDestination }: { selectedDestination: string }) 
           <motion.div 
             key={room.id}
             whileHover={{ y: -10 }}
-            className="bg-white shadow-lg group cursor-pointer flex flex-col"
+            className="bg-white shadow-xl shadow-bacalar-900/5 group cursor-pointer flex flex-col rounded-3xl"
           >
-            <div className="relative h-64 overflow-hidden">
+            <div className="relative h-64 overflow-hidden rounded-t-3xl">
               <img 
                 src={room.image} 
                 alt={room.name} 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute top-4 left-4 bg-ocean-900/90 backdrop-blur-sm px-3 py-1 text-xs font-semibold text-white uppercase tracking-wider">
+              <div className="absolute top-4 left-4 bg-ocean-900/90 backdrop-blur-sm px-3 py-1 text-xs font-semibold text-white uppercase tracking-wider rounded-full">
                 {room.location}
               </div>
-              <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-sm font-semibold text-ocean-900">
+              <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-sm font-semibold text-ocean-900 rounded-full shadow-sm">
                 ${room.price} MXN <span className="text-xs font-normal text-gray-500">/ noche</span>
               </div>
             </div>
@@ -443,16 +443,16 @@ function RoomsSection({ selectedDestination }: { selectedDestination: string }) 
               
               <div className="grid grid-cols-2 gap-y-3 mb-6 border-t border-gray-100 pt-4">
                 <div className="flex items-center text-xs text-gray-500 uppercase tracking-wider">
-                  <Users className="w-4 h-4 mr-2 text-amber-600" />
+                  <Users className="w-4 h-4 mr-2 text-bacalar-600" />
                   Hasta {room.capacity}
                 </div>
                 <div className="flex items-center text-xs text-gray-500 uppercase tracking-wider">
-                  <MapPin className="w-4 h-4 mr-2 text-amber-600" />
+                  <MapPin className="w-4 h-4 mr-2 text-bacalar-600" />
                   {room.size}
                 </div>
               </div>
 
-              <button className="w-full py-3 border border-ocean-900 text-ocean-900 hover:bg-ocean-900 hover:text-white transition-colors uppercase text-xs font-semibold tracking-widest">
+              <button className="w-full py-3 border border-bacalar-600 text-bacalar-600 hover:bg-bacalar-600 hover:text-white transition-all duration-300 uppercase text-xs font-semibold tracking-widest rounded-full">
                 Ver Detalles
               </button>
             </div>
@@ -475,10 +475,10 @@ function ToursSection() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center mb-4">
-            <Compass className="w-6 h-6 text-amber-600 mr-3" />
+            <Compass className="w-6 h-6 text-bacalar-600 mr-3" />
             <h2 className="text-4xl md:text-5xl font-serif text-ocean-900">Experiencias en la Laguna</h2>
           </div>
-          <div className="w-16 h-px bg-amber-600 mx-auto mb-6"></div>
+          <div className="w-16 h-px bg-bacalar-600 mx-auto mb-6"></div>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             Descubre la magia de Bacalar con nuestros tours exclusivos. Navega, explora y conéctate con la naturaleza de los 7 colores.
           </p>
@@ -489,7 +489,7 @@ function ToursSection() {
             <motion.div 
               key={tour.id}
               whileHover={{ y: -10 }}
-              className="bg-sand-50 rounded-2xl overflow-hidden shadow-lg border border-sand-100 flex flex-col"
+              className="bg-sand-50 rounded-3xl overflow-hidden shadow-xl shadow-bacalar-900/5 border border-sand-100 flex flex-col"
             >
               <div className="relative h-56 overflow-hidden">
                 <img 
@@ -512,7 +512,7 @@ function ToursSection() {
                 
                 <div className="flex items-center justify-between mb-6 pt-4 border-t border-sand-200">
                   <div className="flex items-center text-sm text-gray-500 font-medium">
-                    <Clock className="w-4 h-4 mr-2 text-amber-600" />
+                    <Clock className="w-4 h-4 mr-2 text-bacalar-600" />
                     {tour.duration}
                   </div>
                   <div className="text-lg font-semibold text-ocean-900">
@@ -520,7 +520,7 @@ function ToursSection() {
                   </div>
                 </div>
 
-                <button className="w-full py-3 bg-ocean-900 text-white hover:bg-ocean-800 transition-colors uppercase text-xs font-semibold tracking-widest rounded-lg">
+                <button className="w-full py-3 bg-ocean-900 text-white hover:bg-ocean-800 transition-all duration-300 uppercase text-xs font-semibold tracking-widest rounded-full">
                   Reservar Tour
                 </button>
               </div>
@@ -554,8 +554,8 @@ function DeliverySection() {
         <div className="flex flex-col md:flex-row justify-between items-end mb-16">
           <div className="max-w-2xl">
             <div className="flex items-center mb-4">
-              <Star className="w-5 h-5 text-amber-500 mr-2" />
-              <span className="text-amber-500 font-medium tracking-[0.2em] uppercase text-sm">Servicio a la Habitación</span>
+              <Star className="w-5 h-5 text-bacalar-500 mr-2" />
+              <span className="text-bacalar-500 font-medium tracking-[0.2em] uppercase text-sm">Servicio a la Habitación</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-serif mb-6">Experiencias Gastronómicas</h2>
             <p className="text-gray-300">
@@ -565,10 +565,10 @@ function DeliverySection() {
           </div>
           
           <div className="mt-8 md:mt-0 flex items-center bg-white/10 px-6 py-3 rounded-full backdrop-blur-sm">
-            <ShoppingCart className="w-5 h-5 mr-3 text-amber-400" />
+            <ShoppingCart className="w-5 h-5 mr-3 text-bacalar-300" />
             <span className="font-medium">{totalItems} artículos en tu pedido</span>
             {totalItems > 0 && (
-              <button className="ml-4 text-sm text-amber-400 hover:text-amber-300 uppercase tracking-wider font-semibold">
+              <button className="ml-4 text-sm text-bacalar-300 hover:text-bacalar-100 uppercase tracking-wider font-semibold">
                 Ver Carrito
               </button>
             )}
@@ -579,10 +579,10 @@ function DeliverySection() {
           {DELIVERY_ITEMS.map((item) => {
             const Icon = item.icon;
             return (
-              <div key={item.id} className="bg-white/5 border border-white/10 p-6 hover:bg-white/10 transition-colors flex flex-col">
+              <div key={item.id} className="bg-white/5 border border-white/10 p-6 rounded-3xl hover:bg-white/10 transition-colors flex flex-col">
                 <div className="flex justify-between items-start mb-4">
-                  <div className="p-3 bg-amber-600/20 rounded-lg">
-                    <Icon className="w-6 h-6 text-amber-400" />
+                  <div className="p-3 bg-bacalar-500/20 rounded-2xl">
+                    <Icon className="w-6 h-6 text-bacalar-300" />
                   </div>
                   <span className="text-xs uppercase tracking-wider text-gray-400">{item.category}</span>
                 </div>
@@ -593,7 +593,7 @@ function DeliverySection() {
                   <span className="text-lg font-medium">${item.price} MXN</span>
                   <button 
                     onClick={() => addToCart(item.id)}
-                    className="w-8 h-8 rounded-full bg-amber-600 hover:bg-amber-500 flex items-center justify-center transition-colors"
+                    className="w-8 h-8 rounded-full bg-bacalar-600 hover:bg-bacalar-500 flex items-center justify-center transition-colors"
                   >
                     <span className="text-xl leading-none">+</span>
                   </button>
@@ -604,7 +604,7 @@ function DeliverySection() {
         </div>
         
         <div className="mt-12 text-center">
-          <button className="inline-flex items-center text-amber-400 hover:text-amber-300 font-medium uppercase tracking-wider text-sm transition-colors">
+          <button className="inline-flex items-center text-bacalar-300 hover:text-bacalar-100 font-medium uppercase tracking-wider text-sm transition-colors">
             Ver Menú Completo <ChevronRight className="w-4 h-4 ml-1" />
           </button>
         </div>
@@ -642,15 +642,15 @@ function Footer() {
           <h4 className="text-sm font-semibold uppercase tracking-wider mb-6 text-gray-300">Contacto</h4>
           <ul className="space-y-4 text-gray-400 text-sm">
             <li className="flex items-start">
-              <MapPin className="w-5 h-5 mr-3 text-amber-600 shrink-0" />
+              <MapPin className="w-5 h-5 mr-3 text-bacalar-600 shrink-0" />
               <span>Bacalar • Xul-Ha • Rosarito • Cd. Juárez</span>
             </li>
             <li className="flex items-center">
-              <Phone className="w-5 h-5 mr-3 text-amber-600 shrink-0" />
+              <Phone className="w-5 h-5 mr-3 text-bacalar-600 shrink-0" />
               <span>+52 614 588 5665</span>
             </li>
             <li className="flex items-center">
-              <Mail className="w-5 h-5 mr-3 text-amber-600 shrink-0" />
+              <Mail className="w-5 h-5 mr-3 text-bacalar-600 shrink-0" />
               <span>contacto@staysmexico.com</span>
             </li>
           </ul>
@@ -659,10 +659,10 @@ function Footer() {
         <div>
           <h4 className="text-sm font-semibold uppercase tracking-wider mb-6 text-gray-300">Enlaces</h4>
           <ul className="space-y-3 text-gray-400 text-sm">
-            <li><a href="#" className="hover:text-amber-500 transition-colors">Inicio</a></li>
-            <li><a href="#habitaciones" className="hover:text-amber-500 transition-colors">Habitaciones</a></li>
-            <li><a href="#room-service" className="hover:text-amber-500 transition-colors">Room Service</a></li>
-            <li><a href="#" className="hover:text-amber-500 transition-colors">Términos y Condiciones</a></li>
+            <li><a href="#" className="hover:text-bacalar-500 transition-colors">Inicio</a></li>
+            <li><a href="#habitaciones" className="hover:text-bacalar-500 transition-colors">Habitaciones</a></li>
+            <li><a href="#room-service" className="hover:text-bacalar-500 transition-colors">Room Service</a></li>
+            <li><a href="#" className="hover:text-bacalar-500 transition-colors">Términos y Condiciones</a></li>
           </ul>
         </div>
       </div>
@@ -677,7 +677,7 @@ export default function App() {
   const [selectedDestination, setSelectedDestination] = useState('Todos');
 
   return (
-    <div className="min-h-screen font-sans selection:bg-amber-600/30">
+    <div className="min-h-screen font-sans selection:bg-bacalar-500/30">
       <Navbar />
       <main>
         <Hero selectedDestination={selectedDestination} setSelectedDestination={setSelectedDestination} />
