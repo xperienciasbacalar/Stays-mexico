@@ -223,9 +223,9 @@ function Hero({ selectedDestination, setSelectedDestination }: { selectedDestina
   };
 
   return (
-    <div className="relative min-h-screen md:h-[85vh] md:min-h-[600px] flex flex-col overflow-hidden">
+    <div className="relative min-h-screen md:h-[85vh] md:min-h-[600px] flex flex-col">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0 bg-ocean-900">
+      <div className="absolute inset-0 z-0 bg-ocean-900 overflow-hidden">
         <AnimatePresence mode="wait">
           <motion.img 
             key={selectedDestination}
@@ -311,7 +311,7 @@ function Hero({ selectedDestination, setSelectedDestination }: { selectedDestina
           <button 
             onClick={handleSearch}
             disabled={isSearching}
-            className="w-full lg:w-auto bg-bacalar-600 hover:bg-bacalar-500 text-white px-8 py-4 lg:py-0 flex items-center justify-center transition-all duration-300 uppercase text-sm font-semibold tracking-wider disabled:opacity-80 rounded-2xl lg:rounded-full mt-2 lg:mt-0 shrink-0"
+            className="w-full lg:w-auto bg-bacalar-600 hover:bg-bacalar-500 text-white px-8 py-4 flex items-center justify-center transition-all duration-300 uppercase text-sm font-semibold tracking-wider disabled:opacity-80 rounded-2xl lg:rounded-full mt-2 lg:mt-0 shrink-0"
           >
             {isSearching ? (
               <span className="animate-pulse">Buscando...</span>
