@@ -199,6 +199,42 @@ function Navbar() {
 function Hero({ selectedDestination, setSelectedDestination }: { selectedDestination: string, setSelectedDestination: (val: string) => void }) {
   const [isSearching, setIsSearching] = useState(false);
 
+  // Helper to format date as YYYY-MM-DD
+  const formatDate = (date: Date) => {
+    const d = new Date(date);
+    let month = '' + (d.getMonth() + 1);
+    let day = '' + d.getDate();
+    const year = d.getFullYear();
+
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+
+    return [year, month, day].join('-');
+  };
+
+  // Initialize dates
+  const today = new Date();
+  const tomorrow = new Date(today);
+  tomorrow.setDate(tomorrow.getDate() + 1);
+
+  const [checkInDate, setCheckInDate] = useState(formatDate(today));
+  const [checkOutDate, setCheckOutDate] = useState(formatDate(tomorrow));
+
+  const handleCheckInChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newCheckIn = e.target.value;
+    setCheckInDate(newCheckIn);
+
+    // Ensure check-out is at least 1 day after new check-in
+    const newCheckInDate = new Date(newCheckIn);
+    const currentCheckOutDate = new Date(checkOutDate);
+
+    if (newCheckInDate >= currentCheckOutDate) {
+      const nextDay = new Date(newCheckInDate);
+      nextDay.setDate(nextDay.getDate() + 1);
+      setCheckOutDate(formatDate(nextDay));
+    }
+  };
+
   const handleSearch = () => {
     setIsSearching(true);
     setTimeout(() => {
@@ -286,14 +322,26 @@ function Hero({ selectedDestination, setSelectedDestination }: { selectedDestina
             <Calendar className="w-5 h-5 text-bacalar-600 mr-3 shrink-0" />
             <div className="flex flex-col">
               <span className="text-xs text-gray-400 uppercase font-semibold tracking-wider">Llegada</span>
-              <input type="date" className="text-sm font-medium text-gray-800 outline-none bg-transparent" />
+              <input 
+                type="date" 
+                value={checkInDate}
+                min={formatDate(today)}
+                onChange={handleCheckInChange}
+                className="text-sm font-medium text-gray-800 outline-none bg-transparent" 
+              />
             </div>
           </div>
           <div className="flex-1 min-w-[200px] flex items-center border-b md:border-b-0 md:border-r border-gray-200 px-4 py-3">
             <Calendar className="w-5 h-5 text-bacalar-600 mr-3 shrink-0" />
             <div className="flex flex-col">
               <span className="text-xs text-gray-400 uppercase font-semibold tracking-wider">Salida</span>
-              <input type="date" className="text-sm font-medium text-gray-800 outline-none bg-transparent" />
+              <input 
+                type="date" 
+                value={checkOutDate}
+                min={formatDate(new Date(new Date(checkInDate).getTime() + 86400000))}
+                onChange={(e) => setCheckOutDate(e.target.value)}
+                className="text-sm font-medium text-gray-800 outline-none bg-transparent" 
+              />
             </div>
           </div>
           <div className="flex-1 min-w-[200px] flex items-center border-b md:border-b-0 px-4 py-3">
