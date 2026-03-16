@@ -207,16 +207,38 @@ function Hero({ selectedDestination, setSelectedDestination }: { selectedDestina
     }, 600);
   };
 
+  const getBackgroundImage = () => {
+    switch (selectedDestination) {
+      case 'Bacalar':
+        return 'https://images.unsplash.com/photo-1552074284-5e88ef1aef18?auto=format&fit=crop&q=80&w=2000';
+      case 'Xul-Ha':
+        return 'https://images.unsplash.com/photo-1587061949409-02df41d5e562?auto=format&fit=crop&q=80&w=2000';
+      case 'Rosarito':
+        return 'https://images.unsplash.com/photo-1569974516766-2246e7290547?auto=format&fit=crop&q=80&w=2000';
+      case 'Cd. Juárez':
+        return 'https://images.unsplash.com/photo-1580837119756-563d608dd119?auto=format&fit=crop&q=80&w=2000';
+      default:
+        return 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&q=80&w=2000';
+    }
+  };
+
   return (
-    <div className="relative min-h-screen md:h-[85vh] md:min-h-[600px] flex flex-col">
+    <div className="relative min-h-screen md:h-[85vh] md:min-h-[600px] flex flex-col overflow-hidden">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&q=80&w=2000" 
-          alt="Laguna de Bacalar" 
-          className="w-full h-full object-cover"
-          referrerPolicy="no-referrer"
-        />
+      <div className="absolute inset-0 z-0 bg-ocean-900">
+        <AnimatePresence mode="wait">
+          <motion.img 
+            key={selectedDestination}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+            src={getBackgroundImage()} 
+            alt={`Destino: ${selectedDestination}`} 
+            className="w-full h-full object-cover absolute inset-0"
+            referrerPolicy="no-referrer"
+          />
+        </AnimatePresence>
         <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
