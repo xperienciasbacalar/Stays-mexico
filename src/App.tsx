@@ -241,9 +241,9 @@ function Hero({ selectedDestination, setSelectedDestination }: { selectedDestina
       </div>
 
       {/* Booking Bar */}
-      <div className="relative md:absolute md:-bottom-16 left-0 w-full px-4 z-20 pb-8 md:pb-0">
-        <div className="max-w-6xl mx-auto bg-white shadow-2xl rounded-3xl md:rounded-full p-4 flex flex-col md:flex-row gap-4">
-          <div className="flex-1 flex items-center border-b md:border-b-0 md:border-r border-gray-200 px-4 py-3">
+      <div className="relative lg:absolute lg:-bottom-16 left-0 w-full px-4 z-20 pb-8 lg:pb-0 mt-8 lg:mt-0">
+        <div className="max-w-6xl mx-auto bg-white shadow-2xl rounded-3xl lg:rounded-full p-4 flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap gap-4">
+          <div className="flex-1 min-w-[200px] flex items-center border-b lg:border-b-0 md:border-r border-gray-200 px-4 py-3">
             <MapPin className="w-5 h-5 text-bacalar-600 mr-3 shrink-0" />
             <div className="flex flex-col w-full">
               <span className="text-xs text-gray-400 uppercase font-semibold tracking-wider">Destino</span>
@@ -260,21 +260,21 @@ function Hero({ selectedDestination, setSelectedDestination }: { selectedDestina
               </select>
             </div>
           </div>
-          <div className="flex-1 flex items-center border-b md:border-b-0 md:border-r border-gray-200 px-4 py-3">
+          <div className="flex-1 min-w-[200px] flex items-center border-b lg:border-b-0 lg:border-r border-gray-200 px-4 py-3">
             <Calendar className="w-5 h-5 text-bacalar-600 mr-3 shrink-0" />
             <div className="flex flex-col">
               <span className="text-xs text-gray-400 uppercase font-semibold tracking-wider">Llegada</span>
               <input type="date" className="text-sm font-medium text-gray-800 outline-none bg-transparent" />
             </div>
           </div>
-          <div className="flex-1 flex items-center border-b md:border-b-0 md:border-r border-gray-200 px-4 py-3">
+          <div className="flex-1 min-w-[200px] flex items-center border-b md:border-b-0 md:border-r border-gray-200 px-4 py-3">
             <Calendar className="w-5 h-5 text-bacalar-600 mr-3 shrink-0" />
             <div className="flex flex-col">
               <span className="text-xs text-gray-400 uppercase font-semibold tracking-wider">Salida</span>
               <input type="date" className="text-sm font-medium text-gray-800 outline-none bg-transparent" />
             </div>
           </div>
-          <div className="flex-1 flex items-center px-4 py-3">
+          <div className="flex-1 min-w-[200px] flex items-center border-b md:border-b-0 px-4 py-3">
             <Users className="w-5 h-5 text-bacalar-600 mr-3 shrink-0" />
             <div className="flex flex-col w-full">
               <span className="text-xs text-gray-400 uppercase font-semibold tracking-wider">Huéspedes</span>
@@ -289,7 +289,7 @@ function Hero({ selectedDestination, setSelectedDestination }: { selectedDestina
           <button 
             onClick={handleSearch}
             disabled={isSearching}
-            className="bg-bacalar-600 hover:bg-bacalar-500 text-white px-8 py-4 md:py-0 flex items-center justify-center transition-all duration-300 uppercase text-sm font-semibold tracking-wider disabled:opacity-80 rounded-2xl md:rounded-full mt-2 md:mt-0"
+            className="w-full lg:w-auto bg-bacalar-600 hover:bg-bacalar-500 text-white px-8 py-4 lg:py-0 flex items-center justify-center transition-all duration-300 uppercase text-sm font-semibold tracking-wider disabled:opacity-80 rounded-2xl lg:rounded-full mt-2 lg:mt-0 shrink-0"
           >
             {isSearching ? (
               <span className="animate-pulse">Buscando...</span>
